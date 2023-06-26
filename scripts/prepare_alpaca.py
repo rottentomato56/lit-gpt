@@ -33,6 +33,7 @@ def prepare(
     data_file_name: str = DATA_FILE_NAME,
     data_file_url: str = DATA_FILE_URL,
     ignore_index: int = IGNORE_INDEX,
+    limit: int = 10000
 ) -> None:
     """Prepare the Alpaca dataset for instruction tuning.
 
