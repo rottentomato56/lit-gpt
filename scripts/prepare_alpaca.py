@@ -50,6 +50,9 @@ def prepare(
     download_if_missing(data_file_path, data_file_url)
     with open(data_file_path, "r", encoding="utf-8") as file:
         data = json.load(file)
+        if limit:
+            data = data[:limit]
+            print(f'total records: {len(data)}')
 
     print("Loading tokenizer...")
     tokenizer = Tokenizer(checkpoint_dir / "tokenizer.json", checkpoint_dir / "tokenizer_config.json")
